@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Campus Shoes — Comfort that goes the distance</title>
+  <meta name="description" content="Campus Shoes: performance footwear for running, trail, and everyday life.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <!-- Top Bar -->
+  <header class="sticky top-0 z-50 bg-[color:var(--glass-header)] backdrop-blur border-b border-[color:var(--glass-border)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#/" class="text-xl sm:text-2xl font-extrabold tracking-tight text-white">
+        Campus<span class="text-[var(--accent)]">•</span>Shoes
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#/men" class="nav-link">Men</a>
+        <a href="#/women" class="nav-link">Women</a>
+        <a href="#/kids" class="nav-link">Kids</a>
+        <!-- shown only when logged in -->
+        <a id="nav-orders" href="#/orders" class="nav-link hidden">Orders</a>
+        <!-- flips Login <-> Logout -->
+        <a id="nav-auth" href="#/login" class="nav-link">Login</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <button class="hidden sm:inline-flex btn-primary" onclick="openWhatsApp()">Chat & Order</button>
+        <a href="#/cart" class="relative nav-cart" title="Cart">
+          🛒
+          <span data-cart-count class="badge hidden">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- App Mount -->
+  <main id="app" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></main>
+
+  <!-- Footer -->
+  <footer class="mt-16 py-10 border-t border-[color:var(--glass-border)] text-center text-sm text-white/80">
+    Images & model names © Campus — used for educational/demo purposes only.
+    Visit <a class="underline" href="https://www.campus.in" target="_blank" rel="noreferrer">campus.in</a> for official products.
+  </footer>
+
+  <!-- Toasts -->
+  <div id="toasts" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <script>
+    function openWhatsApp(){ window.open('https://wa.me/','_blank'); }
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>
